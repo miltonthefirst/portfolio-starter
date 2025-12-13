@@ -1,59 +1,159 @@
-# PortfolioStarter
+# Angular + Firebase Portfolio Starter (Beginners Track)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.10.
+Build a personal portfolio + blog with an admin panel using Angular, Bootstrap, and Firebase. This repository is designed for students following a hands-on learning path. Each lesson is mapped to official Angular.dev and Firebase docs.
 
-## Development server
+Quick links:
+- Lessons overview: see `docs/LESSONS.md`
+- Assignments: see `docs/ASSIGNMENTS.md`
+- Firebase setup & deploy: see `docs/FIREBASE.md`
+- Local setup instructions: see `docs/SETUP.md`
 
-To start a local development server, run:
+## 1) Project Overview
 
-```bash
+We will build a portfolio/resume website with:
+
+- Home
+- About
+- Skills
+- Projects
+- Contact
+- Blog (public)
+- Admin portal to manage blog posts + profile
+
+Tech stack:
+- Angular (from scratch mindset; favor manual creation over generators)
+- Bootstrap (UI styling)
+- Firebase (Hosting, Auth, Firestore, Storage)
+
+## 2) Repository Structure
+
+Your GitHub repo will look like:
+
+```
+/portfolio-starter
+  /src
+  /docs
+  /assignments
+  /design
+README.md
+```
+
+We will push lesson branches like:
+
+- `lesson-01-setup`
+- `lesson-02-components`
+- `lesson-03-routing`
+- `lesson-04-bootstrap`
+- `lesson-05-services`
+- `lesson-06-firebase-auth`
+- `lesson-07-firestore-crud`
+- `lesson-08-admin-panel`
+
+Students:
+- Fork the repo, or
+- Create personal branches to customize
+
+## 3) Angular Best Practices Used Here
+
+- Standalone components by default (do not set `standalone: true`; it’s implied)
+- Signals for local state and `computed()` for derived state
+- Prefer `input()` and `output()` functions over decorators
+- Use lazy loading for feature routes
+- Put host bindings/listeners in the `host` object of `@Component`/`@Directive` (avoid `@HostBinding`/`@HostListener`)
+- `ChangeDetectionStrategy.OnPush` on components
+- Prefer inline templates for small, focused components
+- Prefer Reactive Forms over Template-driven for complex forms
+- Avoid `ngClass`/`ngStyle`; use `[class...]` and `[style...]` bindings
+- Use native control flow (`@if`, `@for`, `@switch`)
+- Use `NgOptimizedImage` for static images (not for inline base64)
+
+See the lessons for references to Angular.dev.
+
+## 4) Local Development
+
+Prerequisites:
+- Node.js LTS and npm
+- Angular CLI installed globally: `npm i -g @angular/cli`
+
+Install dependencies:
+```
+npm ci
+```
+
+Start the dev server:
+```
+npm start
+```
+
+or with Angular CLI:
+```
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open `http://localhost:4200/` in your browser. The app reloads on code changes.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+Build production:
 ```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+Run unit tests:
+```
 ng test
 ```
 
-## Running end-to-end tests
+## 5) Learning Path (High-level)
 
-For end-to-end (e2e) testing, run:
+Each step includes official docs links. Details are in `docs/LESSONS.md`.
 
-```bash
-ng e2e
-```
+Phase 1 — Angular Fundamentals
+1. Lesson 1: Project Setup — install CLI, create project, file structure
+2. Lesson 2: Components — create manually, `input()`/`output()`
+3. Lesson 3: Routing — static routes, `routerLink`
+4. Lesson 4: Bootstrap — grid, cards, modals, navbars
+5. Lesson 5: Services & DI — interfaces/models, mock data
+6. Lesson 6: Forms — Template basics; Reactive Forms foundation
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Phase 2 — Firebase Integration
+7. Lesson 7: Firebase Setup — CLI, hosting, firestore, auth; environments, rules
+8. Lesson 8: Authentication — email/password, guards, `/admin/login`
+9. Lesson 9: Firestore CRUD — blog CRUD, public `/blog`
+10. Lesson 10: Storage — image upload, save URLs
+11. Lesson 11: Deploy — build and deploy to Firebase Hosting
 
-## Additional Resources
+Phase 3 — Admin Panel (Deep Angular)
+- Reactive forms, guards, lazy-loaded routes, services with Observables, custom pipes, reusable components, Firebase data binding
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 6) Assignments
+
+Assignments are organized by difficulty with clear deliverables. See `docs/ASSIGNMENTS.md`.
+
+## 7) Firebase
+
+Follow `docs/FIREBASE.md` for:
+- Setting up Firebase project and CLI
+- Configuring `environment.ts`
+- Basic security rules for Firestore and Storage
+- Deploying to Firebase Hosting
+
+## 8) Contributing (for students)
+
+- Use lesson branches to follow along.
+- Keep commits small and meaningful.
+- When adding features, follow the Angular best practices listed above.
+
+## 9) References
+
+- Angular First App: https://angular.dev/tutorials/first-app
+- Components: https://angular.dev/guide/components
+- Inputs: https://angular.dev/guide/components/inputs
+- Outputs: https://angular.dev/guide/components/outputs
+- Routing: https://angular.dev/guide/routing
+- DI & Providers: https://angular.dev/guide/di
+- Forms: https://angular.dev/guide/forms
+- Reactive Forms: https://angular.dev/guide/forms/reactive-forms
+- Route Guards: https://angular.dev/guide/routing/route-guards
+- Pipes: https://angular.dev/guide/pipes
+- Observables: https://v17.angular.io/guide/observables-in-angular
+- Bootstrap: https://getbootstrap.com/docs/5.3/getting-started/introduction/
+- Firebase: https://firebase.google.com/docs
