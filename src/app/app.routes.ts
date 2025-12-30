@@ -4,6 +4,8 @@ import {AboutPage} from './pages/about-page/about-page';
 import {SkillsPage} from './pages/skills-page/skills-page';
 import {ProjectsPage} from './pages/projects-page/projects-page';
 import {ContactPage} from './pages/contact-page/contact-page';
+import {BlogPage} from './pages/blog-page/blog-page';
+import {Register} from './pages/register/register';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -12,4 +14,6 @@ export const routes: Routes = [
   { path: 'skills', component: SkillsPage },
   { path: 'projects', component: ProjectsPage },
   { path: 'contact', component: ContactPage },
+  { path: "blog", component: BlogPage },
+  { path: "register", component: Register }
 ];
