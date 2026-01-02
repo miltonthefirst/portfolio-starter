@@ -1,6 +1,12 @@
 <!-- Footer -->
-<footer class="bg-dark py-4 text-center text-secondary border-top border-secondary border-opacity-25 mt-5">
+<footer class="bg-dark py-5 text-center text-secondary border-top border-secondary border-opacity-25 mt-5">
   <div class="container">
-    <p class="mb-0">&copy; 2025 Your Name. All rights reserved.</p>
+    <div class="d-flex justify-content-center gap-4 mb-4">
+      <a [href]="myProfile().socialLinks.github" class="text-secondary transition-hover"><i class="fab fa-github fs-4"></i></a>
+      <a [href]="myProfile().socialLinks.linkedin" class="text-secondary transition-hover"><i class="fab fa-linkedin-in fs-4"></i></a>
+      <a [href]="myProfile().socialLinks.twitter" class="text-secondary transition-hover"><i class="fab fa-twitter fs-4"></i></a>
+      <a [href]="myProfile().socialLinks.email" class="text-secondary transition-hover"><i class="fas fa-envelope fs-4"></i></a>
+    </div>
+    <p class="mb-0">&copy; 2025 {{ myProfile().fullName }}. All rights reserved.</p>
   </div>
 </footer>

@@ -1,15 +1,15 @@
-import {Component, Input} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { ProfileService } from '../../services/profile.service';
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePage {
-
-  @Input()
-  title = '';
-  name: string = 'Milton Gore';
-  role: string = 'Software Engineer';
+  private profileService = inject(ProfileService);
+  myProfile = this.profileService.getMyProfile();
 }
