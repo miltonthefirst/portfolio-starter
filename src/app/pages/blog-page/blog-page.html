@@ -1,23 +1,20 @@
 <!-- Blog Section -->
 <section id="blog" class="container py-5">
-  <h2 class="text-center display-5 fw-bold mb-3">Blog Me</h2>
-  <p class="text-center text-secondary mb-5 fs-5">Get to know me better</p>
-  <div class="row align-items-center g-5">
-    <div class="col-lg-6">
-      <div class="position-relative">
-        <!-- Replace src with your image URL -->
-        <img src="https://placehold.co/600x600/1e293b/FFF?text=Profile+Pic" alt="Profile" class="img-fluid rounded-3 border border-secondary border-opacity-25 shadow-sm">
-      </div>
-    </div>
-    <div class="col-lg-6">
-      <div class="blog-text">
-        <h3 class="h2 fw-bold mb-4">I'm a Creative Web Developer based in [City]</h3>
-        <p class="text-secondary mb-3">I have a passion for creating clean, user-friendly, and efficient websites. My journey in web development started back in 2020 when I decided to try editing custom Tumblr themes — turns out hacking together HTML & CSS is fun!</p>
-        <p class="text-secondary mb-4">Fast-forward to today, and I’ve had the privilege of working at an advertising agency, a start-up, and a huge corporation. My main focus these days is building accessible, inclusive products and digital experiences.</p>
-        <div class="stats">
-          <!-- You can add stats here if you like -->
+  <h2 class="text-center display-5 fw-bold mb-3">Blog</h2>
+  <p class="text-center text-secondary mb-5 fs-5">Latest posts</p>
+  <div class="row g-4">
+    @for (post of posts(); track post.id) {
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 border-secondary border-opacity-25 bg-dark text-white shadow-sm transition-hover overflow-hidden">
+          <img [src]="post.image" [alt]="post.title" class="card-img-top" style="height: 200px; object-fit: cover;">
+          <div class="card-body p-4">
+            <div class="text-primary small mb-2">{{ post.date }}</div>
+            <h3 class="h4 fw-bold mb-2">{{ post.title }}</h3>
+            <p class="text-secondary small mb-4">{{ post.excerpt }}</p>
+            <a [href]="post.url" target="_blank" class="btn btn-link text-primary p-0 text-decoration-none fw-bold">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+          </div>
         </div>
       </div>
-    </div>
+    }
   </div>
 </section>

@@ -1,18 +1,18 @@
 <!-- About Section -->
 <section id="about" class="container py-5">
-  <h2 class="text-center display-5 fw-bold mb-3">About Me</h2>
-  <p class="text-center text-secondary mb-5 fs-5">Get to know me better</p>
+  <h2 class="text-center display-5 fw-bold mb-3">{{ aboutData().title }}</h2>
+  <p class="text-center text-secondary mb-5 fs-5">{{ aboutData().subtitle }}</p>
   <div class="row align-items-center g-5">
     <div class="col-lg-6">
       <div class="position-relative">
         <!-- Replace src with your image URL -->
-        <img src="https://placehold.co/600x600/1e293b/FFF?text=Profile+Pic" alt="Profile" class="img-fluid rounded-3 border border-secondary border-opacity-25 shadow-sm">
+        <img [src]="aboutData().image" alt="Profile" class="img-fluid rounded-3 border border-secondary border-opacity-25 shadow-sm">
       </div>
     </div>
     <div class="col-lg-6">
       <div class="about-text">
-        <h3 class="h2 fw-bold mb-4">I'm a Creative Web Developer based in [City]</h3>
-        <p class="text-secondary mb-3">I have a passion for creating clean, user-friendly, and efficient websites. My journey in web development started back in 2020 when I decided to try editing custom Tumblr themes — turns out hacking together HTML & CSS is fun!</p>
+        <h3 class="h2 fw-bold mb-4">{{ aboutData().description1 }}</h3>
+        <p class="text-secondary mb-3">{{ aboutData().description2 }}</p>
         <p class="text-secondary mb-4">Fast-forward to today, and I’ve had the privilege of working at an advertising agency, a start-up, and a huge corporation. My main focus these days is building accessible, inclusive products and digital experiences.</p>
         <div class="stats">
           <!-- You can add stats here if you like -->
